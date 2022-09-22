@@ -4,11 +4,11 @@ import { FooterColumn } from 'types/ui'
 export const socialLinks = [
 	{
 		url: 'https://twitter.com/swiftbriefapp',
-		icon: <AiFillLinkedin size='25' />
+		icon: <AiFillTwitterCircle size='30' />
 	},
 	{
 		url: 'https://www.linkedin.com/company/swiftbriefapp',
-		icon: <AiFillTwitterCircle size='25' />
+		icon: <AiFillLinkedin size='30' />
 	}
 ]
 

@@ -3,7 +3,6 @@ import NextLink from 'next/link'
 
 export interface BaseLinkProps extends LinkProps {
 	href: string
-	'data-testid'?: string
 }
 
 export const BaseLink = forwardRef<BaseLinkProps, 'div'>((props, ref) => {
@@ -13,3 +12,7 @@ export const BaseLink = forwardRef<BaseLinkProps, 'div'>((props, ref) => {
 		</NextLink>
 	)
 })
+
+BaseLink.defaultProps = {
+	_hover: { opacity: 0.7 }
+} as LinkProps

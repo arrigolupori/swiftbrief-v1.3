@@ -1,7 +1,13 @@
 import { useColorModeValue, chakra } from '@chakra-ui/react'
+import { FC } from 'react'
 
-export const FullLogo = () => {
-	const version = useColorModeValue('#212322', '#32f3e5')
+type LogoProps = {
+	invert: boolean
+}
+
+export const FullLogo: FC<LogoProps> = ({ invert }) => {
+	const mainColor = useColorModeValue('#212322', '#32f3e5')
+	const altColor = useColorModeValue('#32f3e5', '#212322')
 	return (
 		<chakra.svg
 			version='1.1'
@@ -17,21 +23,21 @@ export const FullLogo = () => {
 			<g>
 				<g transform='rotate(9.486557444272353 121.5 287.5)'>
 					<path
-						fill={version}
+						fill={invert ? altColor : mainColor}
 						d='M53.2,107.9l-67.6-7.6l-11.2-67.1L42,40.8L53.2,107.9z M-10.9,96.5l59,6.7l-9.8-58.6l-59-6.7L-10.9,96.5z'
 					/>
 					<path
-						fill={version}
+						fill={invert ? altColor : mainColor}
 						d='M64,96.5l-67.6-7.6l-11.2-67.1l67.6,7.6L64,96.5z M0,85.1l59,6.7l-9.8-58.6l-59-6.7L0,85.1z'
 					/>
 					<path
-						fill={version}
+						fill={invert ? altColor : mainColor}
 						d='M42.4,119.2l-67.6-7.6l-11.2-67.1l67.6,7.6L42.4,119.2z M-21.6,107.8l59,6.7l-9.8-58.6l-59-6.7L-21.6,107.8z'
 					/>
 				</g>
 				<g>
 					<path
-						fill={version}
+						fill={invert ? altColor : mainColor}
 						d='M152.1,74.9h-25.8c-3.9,0.1-7.4-3.3-7.3-7.3l0,0v-2.4h6c0,1.1-0.4,3.6,1.4,3.6c0.7-0.6,28.3,1.5,26.8-1.4l0,0
 			c-0.4-1.2,1.2-10-1.3-9.6c-0.4,0-25.5,0-25.8,0c-3.8-0.1-7.1-3.5-7-7.3l0,0c-0.1-5.7-1.2-16.1,7.3-15.9h25.8
 			c3.9-0.1,7.4,3.3,7.3,7.3l0,0v2.3h-6.1c-0.1-1.1,0.4-3.6-1.3-3.6c-0.7,0.6-28.3-1.5-26.8,1.4l0,0c0.4,1.2-1.2,10,1.4,9.6h25.6

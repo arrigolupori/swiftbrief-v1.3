@@ -11,8 +11,8 @@ import {
 	SimpleGrid
 } from '@chakra-ui/react'
 import { footerColumns, socialLinks } from 'data/footer'
-import { BaseLink } from '../../links'
-import { FullLogo } from '../../logos'
+import { BaseLink } from 'ui/components'
+import { FullLogo } from 'ui/components'
 
 export const ColumnsFooter = forwardRef<ContainerProps, 'div'>((props, ref) => {
 	const blackToBlue = useColorModeValue('primary.500', 'secondary.500')
@@ -33,7 +33,7 @@ export const ColumnsFooter = forwardRef<ContainerProps, 'div'>((props, ref) => {
 				>
 					<VStack spacing={{ base: '6', md: '8' }} align='start'>
 						<BaseLink href='/'>
-							<FullLogo />
+							<FullLogo invert />
 						</BaseLink>
 						<Text maxW='260px'>
 							Helping marketers and editors deliver great content at scale
@@ -43,10 +43,15 @@ export const ColumnsFooter = forwardRef<ContainerProps, 'div'>((props, ref) => {
 						direction={{ base: 'column-reverse', md: 'column', lg: 'row' }}
 						spacing={{ base: '12', md: '8' }}
 					>
-						<SimpleGrid columns={{ base: 2, md: 4 }} rowGap={9} columnGap={3}>
+						<SimpleGrid
+							columns={{ base: 2, md: 3, lg: 4 }}
+							rowGap={9}
+							columnGap={3}
+						>
 							{footerColumns?.map((column, index) => (
 								<VStack
 									key={`key-${index}-${column.title}`}
+									align='start'
 									spacing='4'
 									minW='36'
 									flex='1'
@@ -80,13 +85,14 @@ export const ColumnsFooter = forwardRef<ContainerProps, 'div'>((props, ref) => {
 					pb='12'
 					justify='space-between'
 					direction={{ base: 'column-reverse', md: 'row' }}
+					spacing='6'
 					align='center'
 				>
 					<Text fontSize='sm'>
 						&copy; {new Date().getFullYear()} Swiftbrief | All rights reserved
 					</Text>
 
-					<ButtonGroup spacing={6}>
+					<ButtonGroup spacing='3'>
 						{socialLinks.map((link, index) => (
 							<Link
 								key={`key-${index}-${link.url}`}
