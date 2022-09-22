@@ -33,8 +33,17 @@ model Session {
 }
 
 model Organization {
-  id    String @id @default(cuid())
-  users User[]
+  id                String    @id @default(cuid())
+  name              String?
+  periodEnd         DateTime?
+  plan              String    @default("Free")
+  briefAllowance    Int       @default(2)
+  monthlyBriefsUsed Int       @default(0)
+  topicAllowance    Int       @default(1)
+  monthlyTopicsUsed Int       @default(0)
+  brandAllowance    Int       @default(1)
+  customerId        String?   @unique
+  users             User[]
 }
 
 model User {

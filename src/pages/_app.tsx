@@ -7,7 +7,7 @@ const App = ({
 	pageProps: { session, ...pageProps }
 }: AppProps<any>) => {
 	return (
-		<SessionProvider>
+		<SessionProvider session={session}>
 			<ChakraProvider>
 				<Component {...pageProps} />
 			</ChakraProvider>
