@@ -1,16 +1,20 @@
 import { Heading } from '@chakra-ui/react'
 import { homeMeta } from 'data/meta'
-import type { NextPage } from 'next'
 import { Fragment } from 'react'
-import { Meta } from 'ui/components'
+import { NextPageWithLayout } from 'types/ui'
+import { MagicLinkForm, Meta } from 'ui/components'
+import { getMainWebsiteLayout } from 'ui/layouts/public'
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
 	return (
 		<Fragment>
 			<Meta {...homeMeta} />
 			<Heading>Hello world</Heading>
+			<MagicLinkForm />
 		</Fragment>
 	)
 }
+
+Home.getLayout = getMainWebsiteLayout
 
 export default Home

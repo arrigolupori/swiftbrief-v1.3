@@ -1,9 +1,11 @@
-import type { GetServerSideProps, NextPage } from 'next'
+import type { GetServerSideProps } from 'next'
 import { Fragment } from 'react'
 import Link from 'next/link'
-import { Heading, Text } from '@chakra-ui/react'
+import { Text } from '@chakra-ui/react'
 import { Meta } from 'ui/components'
 import { errorMeta } from 'data/meta'
+import { NextPageWithLayout } from 'types/ui'
+import { getCenteredWebsiteLayout } from 'ui/layouts'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 	const { error } = context.query
@@ -21,11 +23,11 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 	}
 }
 
-type GenericError = {
-	error: string
+type ErrorProps = {
+	error: 'Verification'
 }
 
-const Error: NextPage<GenericError> = ({ error }) => {
+const Error: NextPageWithLayout<ErrorProps> = ({ error }) => {
 	const message =
 		error === 'Verification'
 			? 'Please request a new link from our signin page.'
@@ -40,5 +42,7 @@ const Error: NextPage<GenericError> = ({ error }) => {
 		</Fragment>
 	)
 }
+
+Error.getLayout = getCenteredWebsiteLayout
 
 export default Error

@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Orbitron';
+    src: url('/fonts/orbitron.woff2') format('woff2'),
+         url('/fonts/orbitron.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  
+  }
+  
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('/fonts/nunito-sans.woff2') format('woff2'),
+        url('/fonts/nunito-sans.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Nunito Sans, sans-serif';
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+}

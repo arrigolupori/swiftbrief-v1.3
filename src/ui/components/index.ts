@@ -1,1 +1,5 @@
 export * from './head'
+export * from './forms'
+export * from './logos'
+export * from './links'
+export * from './footers'

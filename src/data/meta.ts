@@ -69,7 +69,7 @@ export const aboutMeta: MetaItem = {
 		'Swiftbrief was born to solve a strong pain that the founder faced when creating content briefs at scale. Learn about the story behind the software here.'
 }
 
-export const _404Meta: MetaItem = {
+export const notFoundMeta: MetaItem = {
 	title: "This page doesn't exist | Swiftbrief",
 	description: "Oops, you've landed on a ghost page."
 }
