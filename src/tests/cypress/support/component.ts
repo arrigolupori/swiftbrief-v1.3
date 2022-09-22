@@ -20,7 +20,6 @@ import './commands'
 // require('./commands')
 
 import { ChakraProvider } from '@chakra-ui/react'
-import { swiftbriefTheme as theme } from 'ui/styles/theme'
 import { mount } from 'cypress/react18'
 
 // Augment the Cypress namespace to include type definitions for
@@ -35,6 +34,4 @@ declare global {
 	}
 }
 
-Cypress.Commands.add('mount', (children) =>
-	mount(ChakraProvider({ children, theme }))
-)
+Cypress.Commands.add('mount', (children) => mount(ChakraProvider({ children })))

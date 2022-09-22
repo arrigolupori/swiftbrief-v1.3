@@ -7,6 +7,39 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Test {
-  id String @id @default(uuid())
+enum Role {
+  CS_SUPPORT
+  SUPER_ADMIN
+  ADMIN
+  EDITOR
+  WRITER
+  VIEWER
+}
+
+model Organization {
+  id String @id @default(cuid())
+}
+
+model User {
+  id String @id @default(cuid())
+}
+
+model Brand {
+  id String @id @default(cuid())
+}
+
+model Topic {
+  id String @id @default(cuid())
+}
+
+model SubTopic {
+  id String @id @default(cuid())
+}
+
+model Brief {
+  id String @id @default(cuid())
+}
+
+model Link {
+  id String @id @default(cuid())
 }
