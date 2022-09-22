@@ -1,0 +1,26 @@
+name: Continuous integration (Cypress)
+
+# Documentation:
+# https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cypress run (Components)
+        uses: cypress-io/github-action@v4
+        with: 
+          config-file: src/config/build/cypress.ts
+          component: true
+      - name: Cypress run (E2E)
+        uses: cypress-io/github-action@v4
+        with:
+          config-file: src/config/build/cypress.ts
+          build: yarn build
+          start: yarn start

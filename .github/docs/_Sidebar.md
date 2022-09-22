@@ -1,0 +1,1 @@
+👋 Hi there! This is where you'll find all internal information on Swiftbrief's v1.3 code base. Please DO NOT SHARE any of the information you find here externally. It is confidential and for internal use only.

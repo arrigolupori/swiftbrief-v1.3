@@ -1,34 +1,90 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Swiftbrief (v1.3)
 
-## Getting Started
+![Swiftbrief logo](https://swiftbrief-cms.nyc3.digitaloceanspaces.com/941f6eb99c5298036be645af1111c3ab.png?updated_at=2022-08-19T16:50:47.645Z)
 
-First, run the development server:
+**NOTE:** This is an upgraded codebase.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+_The original codebase (v1) wasn't implemented using an MVC architecture (Model, View, Controller). There were too many inefficiencies which prompted a re-write with TypeScript, controllers, and global functions._
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Rules for the new codebase:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- Do not repeat yourself: create functions once, re-use forever.
+- Use existing MVC functions or create new ones to handle app functionality.
+- TypeScript everything. If type is already asserted, don't repeat.
+- Make sure build passes before committing. Husky enforces this.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+The codebase uses Yarn, not NPM.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+**Important:**
 
-## Learn More
+Before you get started, install the Gitmoji CLI globally using `npm i -g gitmoji-cli`, then run `gitmoji -g` in your terminal and select: 1) Y; 2) Bottom option; 3) Y; 4) Default option. Gitmoji is a requirement.
 
-To learn more about Next.js, take a look at the following resources:
+<hr />
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Description
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Swiftbrief is the brief generation engine for busy content marketers.
 
-## Deploy on Vercel
+It allows you to:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Create content briefs in < 5 minutes
+- Keep track of topic clusters in one place
+- Monitor writers' performance at scale (soon)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The public roadmap can be found [here](https://www.swiftbrief.com/roadmap).
+
+<hr />
+
+## Commit structure
+
+**Important:** Changes _must_ be made thorough a pull request.
+
+Before you modify the code, create a new branch with a descriptive name.
+
+We use dashed casing (`new-branch`) for branch names.
+
+Add your changes to that branch, commit them, and open a PR with `yarn create:pr`.
+This will automatically list all of the commits as a PR description.
+
+(`create:pr` uses the GitHub CLI, you can install it at [instructions](https://github.com/cli/cli#readme).)
+
+### Gitmoji
+
+We use gitmoji CLI for our commit structure.
+
+Please install it with `npm i -g gitmoji-cli` and enable scopes (see instructions in intro).
+Each commit will need a scope, message, and description. Commit messages are enforced via Husky.
+
+<hr />
+
+## The Swiftbrief CLI
+
+To generate components, controllers, and API endpoints quickly, use:
+
+`yarn generate cm|cn|en <folderName> --path <pathName>`
+
+Each file structure is configured in Swiftbrief's `cli` repository.
+
+You don't have to do any additional configuration.
+
+Replace `folderName` with the name of the component / controller / endpoint. Replace `pathName` with the name of the directory you'd like to place the folder in (no forward slash) under the respective directories.
+
+For example:
+
+`yarn generate cm MyTable --path "tables"`
+
+Will create a `MyTable` folder under:
+
+    /src
+
+    -- /ui
+
+    -- -- /components
+
+    -- -- -- /tables
+
+The `MyTable` folder will include `index.tsx` and `MyTable.cy.tsx` files.
+
+Please refer to the [Swiftbrief CLI repo](https://github.com/swiftbrief/cli) for detailed documentation.
+
+© 2022 Swiftbrief | All rights reserved

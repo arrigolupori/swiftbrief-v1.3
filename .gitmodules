@@ -1,0 +1,3 @@
+[submodule ".github/docs"]
+	path = .github/docs
+	url = https://github.com/swiftbrief/v1.3.wiki.git

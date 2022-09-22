@@ -1,0 +1,10 @@
+addReviewers: true
+addAssignees: author
+reviewers:
+  - arrigolupori
+numberOfReviewers: 1
+assignees:
+  - arrigolupori
+numberOfAssignees: 0
+skipKeywords:
+  - wip
