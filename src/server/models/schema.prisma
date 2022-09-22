@@ -16,12 +16,37 @@ enum Role {
   VIEWER
 }
 
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
 model Organization {
-  id String @id @default(cuid())
+  id    String @id @default(cuid())
+  users User[]
 }
 
 model User {
-  id String @id @default(cuid())
+  id             String        @id @default(cuid())
+  name           String?
+  email          String?       @unique
+  emailVerified  DateTime?
+  organizationId String?
+  guidedBrands   Boolean       @default(true)
+  role           Role          @default(SUPER_ADMIN)
+  sessions       Session[]
+  organization   Organization? @relation(fields: [organizationId], references: [id], onDelete: Cascade)
 }
 
 model Brand {
