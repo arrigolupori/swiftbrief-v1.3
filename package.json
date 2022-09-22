@@ -13,7 +13,7 @@
 		"test:components": "cypress run --component --config-file src/config/build/cypress.ts",
 		"test:all": "yarn test:components && yarn build && start-server-and-test start http://localhost:3000 test:e2e",
 		"issue:bug": "gh issue create --label 'bug' --title",
-		"issue:feature": "gh issue create --label 'feature' --milestone 'Complete v1.3 re-architecture' --body 'Enter your issue here...' --title",
+		"issue:feature": "gh issue create --label 'feature' --body 'Enter your issue here...' --title",
 		"create:pr": "gh pr create --fill",
 		"create:branch": "git branch $b && git checkout $b && git push --set-upstream origin $b",
 		"create:release": "gh release create --generate-notes --draft",
