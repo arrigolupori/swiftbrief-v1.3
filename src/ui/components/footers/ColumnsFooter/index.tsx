@@ -15,13 +15,17 @@ import { BaseLink } from 'ui/components'
 import { FullLogo } from 'ui/components'
 
 export const ColumnsFooter = forwardRef<ContainerProps, 'div'>((props, ref) => {
-	const blackToBlue = useColorModeValue('primary.500', 'secondary.500')
+	const blueToBlackGradient = useColorModeValue(
+		'linear(to-r, primary.900, primary.500)',
+		'linear(to-r, secondary.500, secondary.700)'
+	)
+	const blueToBlack = useColorModeValue('secondary.500', 'primary.500')
 	const whiteToBlack = useColorModeValue('white', 'primary.500')
 	return (
 		<Box
 			as='footer'
 			data-testid='ColumnsFooter'
-			bgColor={blackToBlue}
+			bgGradient={blueToBlackGradient}
 			color={whiteToBlack}
 		>
 			<Container {...props} ref={ref}>
@@ -61,16 +65,17 @@ export const ColumnsFooter = forwardRef<ContainerProps, 'div'>((props, ref) => {
 										fontFamily='heading'
 										fontSize='sm'
 										fontWeight='bold'
+										color={blueToBlack}
 									>
 										{column.title}
 									</Text>
 									<Stack spacing='3' shouldWrapChildren>
 										{column.links?.map((link, index) => (
 											<BaseLink
-												key={`key-${index}-${link.slug}`}
-												href={link.slug}
+												key={`key-${index}-${link.title}`}
+												href={link.href}
 											>
-												{link.anchor}
+												{link.title}
 											</BaseLink>
 										))}
 									</Stack>

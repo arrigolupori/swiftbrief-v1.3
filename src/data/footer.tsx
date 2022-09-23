@@ -16,10 +16,10 @@ export const footerColumns: FooterColumn[] = [
 	{
 		title: 'Company',
 		links: [
-			{ anchor: 'Roadmap', slug: '/roadmap' },
+			{ title: 'Roadmap', href: '/roadmap' },
 			{
-				anchor: 'About',
-				slug: '/about'
+				title: 'About',
+				href: '/about'
 			}
 		]
 	},
@@ -27,16 +27,16 @@ export const footerColumns: FooterColumn[] = [
 		title: 'Product',
 		links: [
 			{
-				anchor: 'Support docs',
-				slug: '/docs'
+				title: 'Support docs',
+				href: '/docs'
 			},
 			{
-				anchor: 'Bug tracker',
-				slug: '/bugs'
+				title: 'Bug tracker',
+				href: '/bugs'
 			},
 			{
-				anchor: 'Changelog',
-				slug: '/changelog'
+				title: 'Changelog',
+				href: '/changelog'
 			}
 		]
 	},
@@ -44,12 +44,12 @@ export const footerColumns: FooterColumn[] = [
 		title: 'Free tools',
 		links: [
 			{
-				anchor: 'Outline generator',
-				slug: '/tools/blog-outline-generator'
+				title: 'Outline generator',
+				href: '/tools/blog-outline-generator'
 			},
 			{
-				anchor: 'Brief generator',
-				slug: '/tools/content-brief-generator'
+				title: 'Brief generator',
+				href: '/tools/content-brief-generator'
 			}
 		]
 	},
@@ -57,12 +57,12 @@ export const footerColumns: FooterColumn[] = [
 		title: 'Legal',
 		links: [
 			{
-				anchor: 'Terms of service',
-				slug: '/terms'
+				title: 'Terms of service',
+				href: '/terms'
 			},
 			{
-				anchor: 'Privacy policy',
-				slug: '/privacy'
+				title: 'Privacy policy',
+				href: '/privacy'
 			}
 		]
 	}

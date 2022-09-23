@@ -3,7 +3,7 @@ import { homeMeta } from 'data/meta'
 import { Fragment } from 'react'
 import { NextPageWithLayout } from 'types/ui'
 import { MagicLinkForm, Meta } from 'ui/components'
-import { getMainWebsiteLayout } from 'ui/layouts/public'
+import { getMainWebsiteLayout } from 'ui/layouts/website'
 
 const Home: NextPageWithLayout = () => {
 	return (

@@ -1,8 +1,7 @@
 import type { GetServerSideProps } from 'next'
 import { Fragment } from 'react'
-import Link from 'next/link'
 import { Text } from '@chakra-ui/react'
-import { Meta } from 'ui/components'
+import { ButtonLink, Meta } from 'ui/components'
 import { errorMeta } from 'data/meta'
 import { NextPageWithLayout } from 'types/ui'
 import { getCenteredWebsiteLayout } from 'ui/layouts'
@@ -38,7 +37,9 @@ const Error: NextPageWithLayout<ErrorProps> = ({ error }) => {
 			<Text>
 				Oops, you&apos;ve encountered a {error.toLowerCase()} error. {message}
 			</Text>
-			{error === 'Verification' && <Link href='/signin'>Back to signin</Link>}
+			{error === 'Verification' && (
+				<ButtonLink href='/'>Back to home</ButtonLink>
+			)}
 		</Fragment>
 	)
 }

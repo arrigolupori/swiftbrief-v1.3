@@ -1,11 +1,8 @@
-import { forwardRef, Link, LinkProps } from '@chakra-ui/react'
+import { forwardRef, Link } from '@chakra-ui/react'
 import NextLink from 'next/link'
+import { ExtendedLinkProps } from '../props'
 
-export interface BaseLinkProps extends LinkProps {
-	href: string
-}
-
-export const BaseLink = forwardRef<BaseLinkProps, 'div'>((props, ref) => {
+export const BaseLink = forwardRef<ExtendedLinkProps, 'div'>((props, ref) => {
 	return (
 		<NextLink href={props.href} passHref>
 			<Link ref={ref} {...props} />
@@ -15,4 +12,4 @@ export const BaseLink = forwardRef<BaseLinkProps, 'div'>((props, ref) => {
 
 BaseLink.defaultProps = {
 	_hover: { opacity: 0.7 }
-} as LinkProps
+} as ExtendedLinkProps

@@ -1,9 +1,51 @@
 import { extendTheme, ThemeOverride } from '@chakra-ui/react'
+import { mode } from '@chakra-ui/theme-tools'
 
 const overrides: ThemeOverride = {
 	fonts: {
 		heading: 'Orbitron, -apple-system, system-ui, sans-serif',
 		body: 'Nunito Sans, -apple-system, system-ui, sans-serif'
+	},
+	styles: {
+		global: (props) => ({
+			body: {
+				bgColor: mode('#fff', 'primary.500')(props)
+			}
+		})
+	},
+	components: {
+		Heading: {
+			baseStyle: (props) => ({
+				letterSpacing: '0.025em',
+				color: mode('primary.500', 'secondary.500')(props)
+			})
+		},
+		Button: {
+			baseStyle: {
+				letterSpacing: '0.025em'
+			},
+			variants: {
+				solid: (props) => ({
+					color: mode('white', 'primary.500')(props),
+					backgroundColor: mode('primary.500', 'secondary.200')(props),
+					_hover: {
+						backgroundColor: mode('primary.400', 'secondary.100')(props),
+						_disabled: {
+							background: mode('primary.400', 'secondary.100')(props)
+						}
+					},
+					_active: { bgColor: mode('primary.300', 'secondary.50')(props) },
+					focus: {
+						boxShadow: '0 0 0 3px #23aaa0'
+					}
+				}),
+				ghost: {
+					_hover: { bgColor: 'transparent', opacity: '0.7' },
+					_active: { bgColor: 'transparent' },
+					_focus: { borderColor: '' }
+				}
+			}
+		}
 	},
 	colors: {
 		primary: {
