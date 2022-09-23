@@ -1,9 +1,6 @@
 import { useColorModeValue, chakra } from '@chakra-ui/react'
+import { LogoProps } from '../props'
 import { FC } from 'react'
-
-type LogoProps = {
-	invert?: boolean
-}
 
 export const FullLogo: FC<LogoProps> = ({ invert }) => {
 	const mainColor = useColorModeValue('#212322', '#32f3e5')

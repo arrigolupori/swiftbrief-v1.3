@@ -97,7 +97,7 @@ export const HamburgerHeader = forwardRef<BoxProps, 'section'>((props, ref) => {
 																	borderWidth='4px'
 																	p='1em'
 																	borderRadius='md'
-																	justify='center'
+																	align='start'
 																>
 																	<Icon as={link.icon} boxSize={8} />
 																	<Text fontSize='1.1rem'>
@@ -115,13 +115,13 @@ export const HamburgerHeader = forwardRef<BoxProps, 'section'>((props, ref) => {
 																			variant='menu'
 																			href={item.href}
 																		>
-																			<HStack spacing='4' p='3'>
+																			<HStack align='start' spacing='4' p='3'>
 																				<Icon
 																					as={item.icon}
 																					boxSize='6'
 																					color={blackToBlue}
 																				/>
-																				<VStack spacing='1'>
+																				<VStack align='start' spacing='1'>
 																					<Text
 																						fontWeight='700'
 																						color={blackToBlue}

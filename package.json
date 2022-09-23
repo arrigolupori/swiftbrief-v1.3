@@ -84,6 +84,7 @@
 		"next-seo": "^5.5.0",
 		"next-sitemap": "^3.1.21",
 		"next-validations": "^0.2.1",
+		"nextjs-progressbar": "^0.0.14",
 		"nodemailer": "^6.7.8",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",

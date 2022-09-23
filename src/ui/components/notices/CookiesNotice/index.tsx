@@ -13,7 +13,10 @@ import { useState, useEffect } from 'react'
 
 export const CookiesNotice = forwardRef<BoxProps, 'div'>((props, ref) => {
 	const whiteToBlack = useColorModeValue('white', 'primary.500')
-	const darkToExtraLightBlue = useColorModeValue('primary.400', 'secondary.200')
+	const darkGrayToExtraLightBlue = useColorModeValue(
+		'primary.400',
+		'secondary.200'
+	)
 	const [dismissCookieNotice, setDismissCookieNotice] = useState(true)
 
 	useEffect(() => {
@@ -37,7 +40,7 @@ export const CookiesNotice = forwardRef<BoxProps, 'div'>((props, ref) => {
 				borderRadius='md'
 				shadow='md'
 				bgColor={whiteToBlack}
-				borderColor={darkToExtraLightBlue}
+				borderColor={darkGrayToExtraLightBlue}
 				zIndex={2}
 				spacing={6}
 			>

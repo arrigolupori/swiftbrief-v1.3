@@ -26,3 +26,7 @@ export interface HeaderNavItem extends NavItem {
 	popover: boolean
 	subNav: SubNavItem[]
 }
+
+export type LayoutProps = {
+	children: ReactNode
+}

@@ -1,11 +1,8 @@
-import { FC, Fragment, ReactElement, ReactNode } from 'react'
+import { FC, Fragment, ReactElement } from 'react'
 import { ColumnsFooter } from 'ui/components/footers'
 import { useColorModeValue, VStack } from '@chakra-ui/react'
 import { CookiesNotice, FullLogo, HamburgerHeader } from 'ui/components'
-
-type LayoutProps = {
-	children: ReactNode
-}
+import { LayoutProps } from 'types/ui'
 
 export const MainWebsiteLayout: FC<LayoutProps> = (props) => (
 	<Fragment>
