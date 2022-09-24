@@ -39,6 +39,10 @@ const overrides: ThemeOverride = {
 						boxShadow: '0 0 0 3px #23aaa0'
 					}
 				}),
+				link: {
+					color: 'primary.500',
+					_hover: { opacity: 0.7, textDecor: 'none' }
+				},
 				ghost: {
 					_hover: { bgColor: 'transparent', opacity: '0.7' },
 					_active: { bgColor: 'transparent' },

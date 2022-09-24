@@ -17,22 +17,26 @@ interface AppNavLinkProps extends LinkProps {
 	title: string
 }
 
-export const AppNavLink = forwardRef<AppNavLinkProps, 'a'>((props, ref) => {
-	const blackToExtraLightBlue = useColorModeValue(
-		'primary.500',
-		'secondary.200'
-	)
+export const AppNavLink = forwardRef<AppNavLinkProps, 'a'>(
+	({ icon, label, title, ...rest }, ref) => {
+		const blackToExtraLightBlue = useColorModeValue(
+			'primary.500',
+			'secondary.200'
+		)
 
-	return (
-		<BaseLink {...props} ref={ref}>
-			<HStack spacing='3' _hover={{ opacity: '0.8' }}>
-				<Tooltip label={props.label} bgColor={blackToExtraLightBlue}>
-					<span>
-						<Icon as={props.icon} boxSize='7' />
-					</span>
-				</Tooltip>
-				<Text fontSize='1.1rem'>{props.title}</Text>
-			</HStack>
-		</BaseLink>
-	)
-})
+		return (
+			<BaseLink {...rest} ref={ref}>
+				<HStack spacing='3' _hover={{ opacity: '0.8' }}>
+					<Tooltip label={label} bgColor={blackToExtraLightBlue}>
+						<span>
+							<Icon as={icon} boxSize='7' />
+						</span>
+					</Tooltip>
+					<Text pb='0.2em' fontSize='1.1rem'>
+						{title}
+					</Text>
+				</HStack>
+			</BaseLink>
+		)
+	}
+)

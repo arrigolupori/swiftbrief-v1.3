@@ -31,8 +31,10 @@ import {
 	ButtonLink
 } from 'ui/components'
 import { AiOutlineMenu } from 'react-icons/ai'
+import { useSession } from 'next-auth/react'
 
 export const HamburgerHeader = forwardRef<BoxProps, 'section'>((props, ref) => {
+	const authSession = useSession()
 	const mobileMenu = useDisclosure()
 	const mobileBreakpoint = useBreakpointValue({ base: true, md: false })
 	const primaryToSecondary = useColorModeValue('primary', 'secondary')
@@ -208,16 +210,24 @@ export const HamburgerHeader = forwardRef<BoxProps, 'section'>((props, ref) => {
 												</BaseLink>
 											))}
 											<Spacer />
-											<ButtonLink href='/' width='100%'>
-												Log in or sign up
+											<ButtonLink
+												href={!authSession.data ? '/signin' : '/app'}
+												width='100%'
+											>
+												{!authSession.data
+													? 'Log in or register'
+													: 'Go to dashboard'}
 											</ButtonLink>
 										</VStack>
 									</PopoverContent>
 								</Popover>
 							)}
 							{!mobileBreakpoint && (
-								<ButtonLink href='/' width='100%'>
-									Log in or sign up
+								<ButtonLink
+									href={!authSession.data ? '/signin' : '/app'}
+									width='100%'
+								>
+									{!authSession.data ? 'Log in or register' : 'Go to dashboard'}
 								</ButtonLink>
 							)}
 						</HStack>

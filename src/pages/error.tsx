@@ -1,7 +1,7 @@
 import type { GetServerSideProps } from 'next'
 import { Fragment } from 'react'
 import { Text } from '@chakra-ui/react'
-import { ButtonLink, Meta } from 'ui/components'
+import { BaseLink, ButtonLink, Meta } from 'ui/components'
 import { errorMeta } from 'data/meta'
 import { NextPageWithLayout } from 'types/ui'
 import { getCenteredWebsiteLayout } from 'ui/layouts'
@@ -27,15 +27,24 @@ type ErrorProps = {
 }
 
 const Error: NextPageWithLayout<ErrorProps> = ({ error }) => {
-	const message =
-		error === 'Verification'
-			? 'Please request a new link from our signin page.'
-			: 'Please try again'
 	return (
 		<Fragment>
 			<Meta {...errorMeta} />
 			<Text>
-				Oops, you&apos;ve encountered a {error.toLowerCase()} error. {message}
+				Oops, you&apos;ve encountered a {error.toLowerCase()} error.{' '}
+				{error === 'Verification' ? (
+					<Text>
+						Please request a new link from our{' '}
+						{
+							<BaseLink fontWeight='700' href='/signin'>
+								signin page
+							</BaseLink>
+						}
+						.
+					</Text>
+				) : (
+					<Text>Please go through the process again.</Text>
+				)}
 			</Text>
 			{error === 'Verification' && (
 				<ButtonLink href='/'>Back to home</ButtonLink>

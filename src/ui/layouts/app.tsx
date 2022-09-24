@@ -14,12 +14,12 @@ import { IconType } from 'react-icons/lib'
 import {
 	Flex,
 	Icon,
-	Text,
-	HStack,
-	Tooltip,
 	Divider,
 	useColorModeValue,
-	VStack
+	VStack,
+	HStack,
+	Tooltip,
+	Text
 } from '@chakra-ui/react'
 
 import { AppNavLink, BaseLink, FullLogo, MarkLogo } from 'ui/components'
@@ -31,13 +31,14 @@ export interface AppLayoutProps extends LayoutProps {
 export const MainAppLayout: FC<AppLayoutProps> = (props) => {
 	const progress = useColorModeValue('#373938', '#99f9f2')
 	const whiteToBlack = useColorModeValue('white', 'primary.500')
-	const blackToExtraLightBlue = useColorModeValue(
-		'primary.500',
-		'secondary.200'
-	)
+
 	const extraLightGrayToDarkGray = useColorModeValue(
 		'primary.10',
 		'primary.400'
+	)
+	const blackToExtraLightBlue = useColorModeValue(
+		'primary.500',
+		'secondary.200'
 	)
 	const [collapsedSidebar, setCollapsedSidebar] = useState(true)
 	useEffect(() => {
@@ -77,8 +78,8 @@ export const MainAppLayout: FC<AppLayoutProps> = (props) => {
 				>
 					<VStack justify='space-between' spacing='1'>
 						<VStack spacing={9} shouldWrapChildren>
-							<BaseLink href='/app/briefs'>
-								{!collapsedSidebar ? <FullLogo invert /> : <MarkLogo invert />}
+							<BaseLink href='/app'>
+								{!collapsedSidebar ? <FullLogo /> : <MarkLogo />}
 							</BaseLink>
 							<VStack align='start' spacing={5} p='1em'>
 								{appNavItems?.map((link, index) => (
@@ -114,13 +115,20 @@ export const MainAppLayout: FC<AppLayoutProps> = (props) => {
 									icon={AiOutlineSetting}
 									href='/app/account'
 								/>
-								<AppNavLink
-									label={collapsedSidebar ? 'Sign out' : ''}
-									title={!collapsedSidebar ? 'Sign out' : ''}
+								<HStack
+									spacing='3'
+									_hover={{ opacity: '0.7', cursor: 'pointer' }}
 									onClick={() => signOut()}
-									icon={AiOutlineLogout}
-									href='/#'
-								/>
+								>
+									<Icon
+										as={AiOutlineLogout}
+										boxSize='7'
+										transform='scaleX(-1)'
+									/>
+									<Text fontSize='1.1rem'>
+										{!collapsedSidebar ? 'Sign out' : ''}
+									</Text>
+								</HStack>
 							</VStack>
 						</VStack>
 					</VStack>

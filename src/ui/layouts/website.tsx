@@ -1,7 +1,12 @@
 import { FC, Fragment, ReactElement } from 'react'
 import { ColumnsFooter } from 'ui/components/footers'
 import { useColorModeValue, VStack } from '@chakra-ui/react'
-import { CookiesNotice, FullLogo, HamburgerHeader } from 'ui/components'
+import {
+	BaseLink,
+	CookiesNotice,
+	FullLogo,
+	HamburgerHeader
+} from 'ui/components'
 import { LayoutProps } from 'types/ui'
 
 export const MainWebsiteLayout: FC<LayoutProps> = (props) => (
@@ -30,7 +35,9 @@ export const CenteredWebsiteLayout: FC<LayoutProps> = (props) => {
 			px='1em'
 			spacing='9'
 		>
-			<FullLogo />
+			<BaseLink href='/'>
+				<FullLogo />
+			</BaseLink>
 			<VStack
 				maxW='md'
 				p='8'
