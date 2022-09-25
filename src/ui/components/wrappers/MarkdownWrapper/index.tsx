@@ -1,5 +1,5 @@
-import { Container, ContainerProps, forwardRef } from '@chakra-ui/react'
 import { useExternalUrls } from 'ui/hooks'
+import { Container, ContainerProps, forwardRef } from '@chakra-ui/react'
 
 export const MarkdownWrapper = forwardRef<ContainerProps, 'div'>(
 	(props, ref) => {

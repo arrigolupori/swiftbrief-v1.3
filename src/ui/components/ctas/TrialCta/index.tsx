@@ -4,13 +4,13 @@ import {
 	Img,
 	Text,
 	VStack,
-	Button,
 	HStack,
 	Icon,
 	useColorModeValue
 } from '@chakra-ui/react'
 import { Fragment } from 'react'
 import { CheckIcon } from '@chakra-ui/icons'
+import { ButtonLink } from 'ui/components/links'
 
 export const TrialCta = () => {
 	const lighterBlueToDarkGray = useColorModeValue(
@@ -64,17 +64,13 @@ export const TrialCta = () => {
 						</Box>
 					</Stack>
 					<VStack spacing={3}>
-						<Button
+						<ButtonLink
 							size='lg'
-							mt={{ base: '6', lg: '0' }}
-							w={{ base: 'full', lg: 'auto' }}
-							minW='10rem'
-							flexShrink={0}
 							fontSize='md'
-							fontWeight='bold'
+							href='/register'
 						>
 							Get a free 7-day trial
-						</Button>
+						</ButtonLink>
 
 						<HStack justify='center'>
 							<Icon blockSize='0.6em' as={CheckIcon} />

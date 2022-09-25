@@ -14,7 +14,7 @@ export type FooterColumn = {
 export type NavItem = {
 	title: string
 	description?: string
-	href: `/${string}`
+	href: `/${string}` | `https://${string}`
 	icon?: IconType
 }
 
@@ -25,6 +25,7 @@ export interface SubNavItem extends NavItem {
 export interface HeaderNavItem extends NavItem {
 	popover: boolean
 	subNav: SubNavItem[]
+	hideOnTablet: boolean
 }
 
 export type LayoutProps = {

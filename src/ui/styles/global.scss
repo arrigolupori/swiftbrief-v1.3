@@ -51,10 +51,7 @@ body.chakra-ui-dark {
       color: #32f3e5;
     }
     img {
-      border: 6px solid #99f9f2;
-    }
-    img:hover {
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.75);
+      border: 6px solid #23aaa0;
     }
     #tombstone {
       background-color: #32f3e5;
@@ -69,10 +66,7 @@ body.chakra-ui-light {
       color: #23aaa0;
     }
     img {
-      border: 6px solid #373938;
-    }
-    img:hover {
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+      border: 6px solid #23aaa0;
     }
     #tombstone {
       background-color: #373938;
@@ -121,10 +115,11 @@ body.chakra-ui-light {
 
   a {
     font-weight: bold;
+    transition: opacity 0.15s;
   }
 
   a:hover {
-    text-decoration: underline;
+    opacity: 0.7;
   }
 
   ul, ol {
@@ -140,10 +135,6 @@ body.chakra-ui-light {
     margin: 1em 0;
     border-radius: 1em;
     transition: box-shadow 0.5s;
-  }
-
-  img:hover {
-    cursor: pointer;
   }
 
   hr {

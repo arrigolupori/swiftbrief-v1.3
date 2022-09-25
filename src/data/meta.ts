@@ -48,11 +48,19 @@ export const pricingMeta: MetaItem = {
 }
 
 export const signInMeta: MetaItem = {
-	title: 'Sign in or register to Swiftbrief',
+	title: 'Sign in to Swiftbrief',
 	description:
 		'The login page for Swiftbrief. You can use magic links, email and password credentials, or sign in with your favorite service provider.',
 	thumbnailUrl: `${process.env.NEXT_PUBLIC_URL}/img/thumbnails/swiftbrief-home.png`,
-	thumbnailAlt: 'swiftbrief login page'
+	thumbnailAlt: 'swiftbrief login signin page'
+}
+
+export const registerMeta: MetaItem = {
+	title: 'Get a free 7-day trial | Swiftbrief',
+	description:
+		'Register to Swiftbrief and get a free 7-day trial. Choose the access method that you prefer and get started with your content briefs.',
+	thumbnailUrl: `${process.env.NEXT_PUBLIC_URL}/img/thumbnails/swiftbrief-home.png`,
+	thumbnailAlt: 'swiftbrief register sign up page'
 }
 
 export const homeMeta: MetaItem = {
@@ -80,6 +88,14 @@ export const briefGenMeta: MetaItem = {
 		"Swiftbrief's content brief generator allows you to generate a targeted brief for your content writer in less than 5 minutes. No signup required.",
 	thumbnailUrl: `${process.env.NEXT_PUBLIC_URL}/img/thumbnails/swiftbrief-home.png`,
 	thumbnailAlt: 'swiftbrief brief generation for content marketers'
+}
+
+export const contactMeta: MetaItem = {
+	title: 'Contact Swiftbrief: Get in touch with the team',
+	description:
+		'Swiftbrief offers a variety of ways to contact the team. You can use the contact form, email address, or social media to get in touch.',
+	thumbnailUrl: `${process.env.NEXT_PUBLIC_URL}/img/thumbnails/swiftbrief-home.png`,
+	thumbnailAlt: 'swiftbrief contact information'
 }
 
 export const errorMeta: MetaItem = {

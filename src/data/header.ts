@@ -45,6 +45,7 @@ export const headerNavItems: HeaderNavItem[] = [
 			'Explore all Swiftbrief functionality directly from our feature gallery',
 		href: '/features',
 		icon: AiOutlineStar,
+		hideOnTablet: false,
 		subNav: [
 			{
 				title: 'Brief generation',
@@ -85,6 +86,7 @@ export const headerNavItems: HeaderNavItem[] = [
 		title: 'Pricing',
 		description: '',
 		href: '/pricing',
+		hideOnTablet: false,
 		subNav: []
 	},
 	{
@@ -94,6 +96,7 @@ export const headerNavItems: HeaderNavItem[] = [
 			"Leverage Swiftbrief's educational resources and free content tools",
 		href: '/resources',
 		icon: AiOutlineRead,
+		hideOnTablet: true,
 		subNav: [
 			{
 				title: 'Blog posts',

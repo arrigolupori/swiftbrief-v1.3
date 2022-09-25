@@ -6,7 +6,8 @@ import {
 	Input,
 	Text,
 	Button,
-	FormErrorMessage
+	FormErrorMessage,
+	FormLabel
 } from '@chakra-ui/react'
 import { useForm } from 'ui/hooks'
 
@@ -18,10 +19,11 @@ export const MagicLinkForm = forwardRef<MagicLinkFormProps, 'form'>(
 	(props, ref) => {
 		const { magicLinkForm } = useForm()
 		return (
-			<form onSubmit={magicLinkForm.handleSubmit}>
+			<form style={{ width: '100%' }} onSubmit={magicLinkForm.handleSubmit}>
 				{!magicLinkForm.status.success ? (
 					<VStack {...props} ref={ref}>
 						<FormControl
+							isRequired
 							isInvalid={
 								magicLinkForm.touched.email && magicLinkForm.errors.email
 									? true
@@ -29,10 +31,11 @@ export const MagicLinkForm = forwardRef<MagicLinkFormProps, 'form'>(
 							}
 							isDisabled={magicLinkForm.isSubmitting}
 						>
+							<FormLabel htmlFor='magic-link-email'>Email address</FormLabel>
 							<Input
 								id='magic-link-email'
 								type='email'
-								placeholder='Your email address...'
+								placeholder='you@yourcompany.com'
 								{...magicLinkForm.getFieldProps('email')}
 							/>
 							<FormErrorMessage>{magicLinkForm.errors.email}</FormErrorMessage>
@@ -41,6 +44,11 @@ export const MagicLinkForm = forwardRef<MagicLinkFormProps, 'form'>(
 							w='100%'
 							type='submit'
 							isLoading={magicLinkForm.isSubmitting}
+							isDisabled={
+								!magicLinkForm.touched.email || magicLinkForm.errors.email
+									? true
+									: false
+							}
 						>
 							Sign in or register
 						</Button>

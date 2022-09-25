@@ -1,8 +1,9 @@
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 
-import { signInMeta } from 'data/meta'
+import { registerMeta } from 'data/meta'
 import { AuthModule, Meta } from 'ui/components'
 
+import { useColorModeValue } from '@chakra-ui/react'
 import { NextPageWithLayout } from 'types/ui'
 import { getCenteredWebsiteLayout } from 'ui/layouts'
 import { getSession } from 'next-auth/react'
@@ -26,8 +27,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 const Signin: NextPageWithLayout<Session> = () => {
 	return (
 		<Fragment>
-			<Meta {...signInMeta} />
-			<AuthModule />
+			<Meta {...registerMeta} />
+			<AuthModule register />
 		</Fragment>
 	)
 }

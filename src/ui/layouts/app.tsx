@@ -18,7 +18,6 @@ import {
 	useColorModeValue,
 	VStack,
 	HStack,
-	Tooltip,
 	Text
 } from '@chakra-ui/react'
 

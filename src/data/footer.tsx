@@ -18,6 +18,10 @@ export const footerColumns: FooterColumn[] = [
 		links: [
 			{ title: 'Roadmap', href: '/roadmap' },
 			{
+				title: 'Contact',
+				href: '/contact'
+			},
+			{
 				title: 'About',
 				href: '/about'
 			}
@@ -26,6 +30,10 @@ export const footerColumns: FooterColumn[] = [
 	{
 		title: 'Product',
 		links: [
+			{
+				title: 'API docs (beta)',
+				href: 'https://api.swiftbrief.com'
+			},
 			{
 				title: 'Support docs',
 				href: '/docs'
