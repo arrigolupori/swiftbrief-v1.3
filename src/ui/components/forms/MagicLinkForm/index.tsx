@@ -45,7 +45,7 @@ export const MagicLinkForm = forwardRef<MagicLinkFormProps, 'form'>(
 							type='submit'
 							isLoading={magicLinkForm.isSubmitting}
 							isDisabled={
-								magicLinkForm.touched.email && magicLinkForm.errors.email
+								!magicLinkForm.touched.email || magicLinkForm.errors.email
 									? true
 									: false
 							}

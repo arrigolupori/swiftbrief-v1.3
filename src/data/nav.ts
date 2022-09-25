@@ -8,7 +8,9 @@ import {
 	AiOutlineRead,
 	AiOutlinePicLeft,
 	AiOutlineTool,
-	AiOutlineDollarCircle
+	AiOutlineDollarCircle,
+	AiOutlineReconciliation,
+	AiOutlineNodeIndex
 } from 'react-icons/ai'
 
 import { NavItem } from 'types/ui'
@@ -115,5 +117,24 @@ export const headerNavItems: HeaderNavItem[] = [
 				buttonText: 'Try our free tools'
 			}
 		]
+	}
+]
+
+export const toolsNavItems: (NavItem & { buttonText: string })[] = [
+	{
+		icon: AiOutlineReconciliation,
+		title: 'Content brief generator',
+		description:
+			'Generate a simple content brief to share with your writer in text format.',
+		buttonText: 'Create a content brief',
+		href: '/tools/content-brief-generator'
+	},
+	{
+		icon: AiOutlineNodeIndex,
+		title: 'Blog outline generator',
+		description:
+			'Build a simple outline for your blog post without having to scour Google.',
+		buttonText: 'Build your outline',
+		href: '/tools/blog-outline-generator'
 	}
 ]

@@ -80,7 +80,7 @@ export const MainAppLayout: FC<AppLayoutProps> = (props) => {
 								{appNavItems?.map((link, index) => (
 									<AppNavLink
 										key={`key-${index}-${link.title}`}
-										href={link.href}
+										href={link.href as `/${string}`}
 										label={collapsedSidebar ? link.title : ''}
 										title={!collapsedSidebar ? link.title : ''}
 										icon={link.icon as IconType}
@@ -112,7 +112,7 @@ export const MainAppLayout: FC<AppLayoutProps> = (props) => {
 								/>
 								<HStack
 									spacing='3'
-									_hover={{ opacity: '0.7', cursor: 'pointer' }}
+									_hover={{ opacity: '0.8', cursor: 'pointer' }}
 									onClick={() => signOut()}
 								>
 									<Icon

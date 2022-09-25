@@ -25,6 +25,11 @@ const overrides: ThemeOverride = {
 				color: mode('primary.500', 'white')(props)
 			})
 		},
+		Tooltip: {
+			baseStyle: (props) => ({
+				bgColor: mode('primary.900', 'secondary.200')(props)
+			})
+		},
 		Button: {
 			baseStyle: {
 				letterSpacing: '0.025em'
@@ -32,11 +37,22 @@ const overrides: ThemeOverride = {
 			variants: {
 				solid: (props) => ({
 					color: mode('white', 'primary.500')(props),
-					backgroundColor: mode('primary.500', 'secondary.200')(props),
+					bgGradient: mode(
+						'linear(to-br, primary.200, primary.900)',
+						'linear(to-br, secondary.200, secondary.700)'
+					)(props),
 					_hover: {
-						backgroundColor: mode('primary.400', 'secondary.100')(props),
+						opacity: 0.8,
+						bgGradient: mode(
+							'linear(to-br, primary.200, primary.900)',
+							'linear(to-br, secondary.200, secondary.700)'
+						)(props),
 						_disabled: {
-							background: mode('primary.400', 'secondary.100')(props)
+							opacity: 0.4,
+							bgGradient: mode(
+								'linear(to-br, primary.200, primary.900)',
+								'linear(to-br, secondary.200, secondary.700)'
+							)(props)
 						}
 					},
 					_active: { bgColor: mode('primary.300', 'secondary.50')(props) },
@@ -46,10 +62,10 @@ const overrides: ThemeOverride = {
 				}),
 				link: {
 					color: 'primary.500',
-					_hover: { opacity: 0.7, textDecor: 'none' }
+					_hover: { opacity: 0.8, textDecor: 'none' }
 				},
 				ghost: {
-					_hover: { bgColor: 'transparent', opacity: '0.7' },
+					_hover: { bgColor: 'transparent', opacity: 0.8 },
 					_active: { bgColor: 'transparent' },
 					_focus: { borderColor: '' }
 				},

@@ -37,7 +37,7 @@ export const AuthModule = forwardRef<AuthModuleProps, 'div'>(
 					</Heading>
 					<Text>
 						{register
-							? 'Register to Swiftbrief today and get a free trial for 7 days—nocredit card required.'
+							? 'Register to Swiftbrief today and get a free trial for 7 days—no credit card required.'
 							: 'Resume working on your content briefs'}
 					</Text>
 				</VStack>

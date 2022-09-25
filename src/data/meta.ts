@@ -123,3 +123,11 @@ export const featuresMeta: MetaItem = {
 	thumbnailUrl: `${process.env.NEXT_PUBLIC_URL}/img/thumbnails/swiftbrief-home.png`,
 	thumbnailAlt: 'swiftbrief brief generation for content marketers'
 }
+
+export const toolsMeta: MetaItem = {
+	title: 'Free content brief tools for busy marketers | Swiftbrief',
+	description:
+		'Check out Swiftbriefs free tools: content brief generator, blog outline generator, and more. No signup required.',
+	thumbnailUrl: `${process.env.NEXT_PUBLIC_URL}/img/thumbnails/swiftbrief-home.png`,
+	thumbnailAlt: 'swiftbrief brief generation for content marketers'
+}

@@ -5,7 +5,8 @@ import {
 	FormControl,
 	FormLabel,
 	FormErrorMessage,
-	Button
+	Button,
+	Text
 } from '@chakra-ui/react'
 import { BaseInput, BaseArea } from 'ui/components'
 import { useForm } from 'ui/hooks'
@@ -17,7 +18,7 @@ export interface ContactFormProps extends StackProps {
 export const ContactForm = forwardRef<ContactFormProps, 'div'>(
 	({ name, ...rest }, ref): any => {
 		const { contactForm } = useForm()
-		return (
+		return !contactForm.status.success ? (
 			<form style={{ width: '100%' }} onSubmit={contactForm.handleSubmit}>
 				<VStack ref={ref} {...rest} data-testid={name}>
 					<FormControl
@@ -62,12 +63,21 @@ export const ContactForm = forwardRef<ContactFormProps, 'div'>(
 								? true
 								: false
 						}
+						isLoading={contactForm.isSubmitting}
 						type='submit'
 					>
-						Send support request
+						Submit your message
 					</Button>
+					{contactForm.status.error && (
+						<Text color='red'>{contactForm.status.error}</Text>
+					)}
 				</VStack>
 			</form>
+		) : (
+			<Text>
+				Thanks for reaching out! A member of Swiftbrief&apos;s team will get
+				back to you within 1 business day.
+			</Text>
 		)
 	}
 )

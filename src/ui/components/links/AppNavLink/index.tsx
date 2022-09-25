@@ -27,7 +27,7 @@ export const AppNavLink = forwardRef<AppNavLinkProps, 'a'>(
 		return (
 			<BaseLink {...rest} ref={ref}>
 				<HStack spacing='3' _hover={{ opacity: '0.8' }}>
-					<Tooltip label={label} bgColor={blackToExtraLightBlue}>
+					<Tooltip label={label}>
 						<span>
 							<Icon as={icon} boxSize='7' />
 						</span>

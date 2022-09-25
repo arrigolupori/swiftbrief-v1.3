@@ -14,15 +14,18 @@ export const useForm = () => {
 			email: '',
 			message: ''
 		},
+		initialStatus: {
+			error: null,
+			success: false
+		},
 		validationSchema: contactFormSchema,
 		onSubmit: async (values, actions) => {
-			const res = await axios
-				.post('/api/public/support', values)
-				.catch((error) => {
-					actions.setSubmitting(false)
-					actions.setStatus(error.message)
-				})
-			console.log(res)
+			try {
+				await axios.post('/api/public/contact', values)
+				actions.setStatus({ error: null, success: true })
+			} catch (error: any) {
+				actions.setStatus({ error: error.message, success: false })
+			}
 		}
 	})
 	const magicLinkForm = useFormik({

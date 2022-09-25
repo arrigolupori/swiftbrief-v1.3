@@ -15,12 +15,7 @@ export const BenefitSingle = forwardRef<BenefitItem & StackProps, 'div'>(
 		const blackToBlue = useColorModeValue('primary.500', 'secondary.500')
 		return (
 			<VStack ref={ref} {...rest}>
-				<Square
-					size={{ base: '10', md: '12' }}
-					bg='accent'
-					color='inverted'
-					borderRadius='lg'
-				>
+				<Square size={{ base: '10', md: '12' }} borderRadius='lg'>
 					<Icon as={icon} boxSize={14} color={blackToBlue} />
 				</Square>
 				<VStack spacing={{ base: '1', md: '2' }}>

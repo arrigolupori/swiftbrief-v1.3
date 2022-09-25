@@ -26,15 +26,21 @@ import {
 
 const Home: NextPageWithLayout = () => {
 	const mobileBreakpoint = useBreakpointValue({ base: true, md: false })
-	const lighterBlueToDarkGray = useColorModeValue(
-		'secondary.300',
-		'primary.400'
+	const blackToBlueGradient = useColorModeValue(
+		'linear(to-br, primary.200, primary.700)',
+		'linear(to-br, secondary.200, secondary.700)'
+	)
+	const blueToBlackGradient = useColorModeValue(
+		'linear(to-br, secondary.200, secondary.700)',
+		'linear(to-br, primary.300, primary.400)'
 	)
 	return (
 		<Fragment>
 			<Meta {...homeMeta} />
 			<Heading
 				as='h1'
+				bgClip='text'
+				bgGradient={blackToBlueGradient}
 				fontSize={{ base: '2xl', md: '5xl' }}
 				lineHeight='1.2em'
 				maxW='2xl'
@@ -69,7 +75,7 @@ const Home: NextPageWithLayout = () => {
 			<SimpleGrid columns={2} columnGap='8' rowGap='10'>
 				{stats.map((stat, index) => (
 					<Box
-						bgColor={lighterBlueToDarkGray}
+						bgGradient={blueToBlackGradient}
 						key={`key-${index}-${stat.description}`}
 						px='6'
 						py='6'

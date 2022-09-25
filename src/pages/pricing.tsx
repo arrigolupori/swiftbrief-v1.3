@@ -6,9 +6,9 @@ import {
 	SimpleGrid,
 	useDisclosure,
 	Modal,
-	ModalCloseButton,
 	ModalContent,
-	ModalOverlay
+	ModalOverlay,
+	useColorModeValue
 } from '@chakra-ui/react'
 import { pricingMeta } from 'data/meta'
 import { customerTestimonials, perks } from 'data/sales'
@@ -25,6 +25,7 @@ import { InlineWidget } from 'react-calendly'
 
 const Pricing: NextPageWithLayout = () => {
 	const mobileBreakpoint = useBreakpointValue({ base: true, md: false })
+	const whiteToDarkGray = useColorModeValue('white', 'primary.400')
 	const demoModal = useDisclosure()
 	return (
 		<Fragment>
@@ -78,8 +79,7 @@ const Pricing: NextPageWithLayout = () => {
 			/>
 			<Modal isOpen={demoModal.isOpen} onClose={demoModal.onClose}>
 				<ModalOverlay />
-				<ModalContent>
-					<ModalCloseButton />
+				<ModalContent bgColor={whiteToDarkGray}>
 					<InlineWidget url='https://calendly.com/arrigo-lupori/swiftbrief-30-min-demo' />
 				</ModalContent>
 			</Modal>

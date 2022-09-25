@@ -22,7 +22,7 @@ import {
 	useBreakpointValue,
 	Badge
 } from '@chakra-ui/react'
-import { headerNavItems, mobileNavItems } from 'data/header'
+import { headerNavItems, mobileNavItems } from 'data/nav'
 import { Fragment } from 'react'
 import {
 	BaseLink,
@@ -56,7 +56,7 @@ export const HamburgerHeader = forwardRef<BoxProps, 'section'>((props, ref) => {
 					width='100%'
 					variant='outline'
 					colorScheme={primaryToSecondary}
-					_hover={{ bgColor: '', opacity: 0.7 }}
+					_hover={{ bgColor: '', opacity: 0.8 }}
 				>
 					Sign in
 				</ButtonLink>
@@ -136,14 +136,13 @@ export const HamburgerHeader = forwardRef<BoxProps, 'section'>((props, ref) => {
 															width={{ base: 'sm', md: '2xl' }}
 															bgColor={whiteToDarkGray}
 														>
-															<VStack align='middle'>
+															<VStack align='center'>
 																<HStack
 																	py='0.5em'
 																	spacing={6}
 																	borderWidth='4px'
 																	p='1em'
 																	borderRadius='md'
-																	align='start'
 																>
 																	<Icon as={link.icon} boxSize={8} />
 																	<Text fontSize='1.1rem'>
@@ -193,12 +192,7 @@ export const HamburgerHeader = forwardRef<BoxProps, 'section'>((props, ref) => {
 							)}
 						</Flex>
 						<HStack spacing='3'>
-							<Tooltip
-								mt='0.2em'
-								label='Switch color mode'
-								bgColor={blackToExtraLightBlue}
-								placement='left'
-							>
+							<Tooltip mt='0.2em' label='Switch color mode' placement='left'>
 								<span>
 									<ColorModeToggle />
 								</span>

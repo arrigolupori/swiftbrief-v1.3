@@ -1,5 +1,5 @@
 import { Heading, Spacer, Text } from '@chakra-ui/react'
-import { headerNavItems } from 'data/header'
+import { headerNavItems } from 'data/nav'
 import { resourcesMeta } from 'data/meta'
 import { Fragment } from 'react'
 import { NextPageWithLayout } from 'types/ui'

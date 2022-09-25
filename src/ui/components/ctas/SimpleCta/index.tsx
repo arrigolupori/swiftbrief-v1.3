@@ -38,14 +38,14 @@ export const SimpleCta = forwardRef<SimpleCtaProps, 'div'>(
 		},
 		ref
 	) => {
-		const lighterBlueToDarkGray = useColorModeValue(
-			'secondary.300',
-			'primary.400'
-		)
 		const blackToBlue = useColorModeValue('primary.500', 'secondary.500')
+		const blueToBlackGradient = useColorModeValue(
+			'linear(to-br, secondary.200, secondary.700)',
+			'linear(to-br, primary.300, primary.400)'
+		)
 		return (
 			<Fragment>
-				<Box {...rest} ref={ref} bgColor={lighterBlueToDarkGray}>
+				<Box {...rest} ref={ref} bgGradient={blueToBlackGradient}>
 					<Stack
 						align='center'
 						direction={{ base: 'column', lg: 'row' }}

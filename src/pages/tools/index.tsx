@@ -1,22 +1,22 @@
 import { Heading, Spacer, Text } from '@chakra-ui/react'
-import { headerNavItems } from 'data/nav'
-import { featuresMeta } from 'data/meta'
+import { toolsNavItems } from 'data/nav'
+import { toolsMeta } from 'data/meta'
 import { Fragment } from 'react'
 import { NextPageWithLayout } from 'types/ui'
 import { Meta, SimpleCta, DirectoryGrid } from 'ui/components'
 import { getDirectoryWebsiteLayout } from 'ui/layouts'
 
-const Features: NextPageWithLayout = () => {
+const Tools: NextPageWithLayout = () => {
 	return (
 		<Fragment>
-			<Meta {...featuresMeta} />
+			<Meta {...toolsMeta} />
 			<Heading as='h1' fontSize={{ base: '2xl', md: '5xl' }} lineHeight='1.2'>
-				All Swiftbrief features
+				Swiftbrief&apos;s free tools
 			</Heading>
 			<Text fontSize={{ base: 'md', md: '2xl' }} mt='4' maxW='xl'>
-				Check out all Swiftbrief has to offer
+				Completely free to use. No signup required.
 			</Text>
-			<DirectoryGrid items={headerNavItems[0].subNav} />
+			<DirectoryGrid items={toolsNavItems} />
 			<Spacer py='1em' />
 			<SimpleCta
 				title='Delegate content at scale'
@@ -30,6 +30,6 @@ const Features: NextPageWithLayout = () => {
 	)
 }
 
-Features.getLayout = getDirectoryWebsiteLayout
+Tools.getLayout = getDirectoryWebsiteLayout
 
-export default Features
+export default Tools

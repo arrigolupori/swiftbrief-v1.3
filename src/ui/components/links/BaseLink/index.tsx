@@ -11,5 +11,5 @@ export const BaseLink = forwardRef<ExtendedLinkProps, 'a'>((props, ref) => {
 })
 
 BaseLink.defaultProps = {
-	_hover: { opacity: 0.7 }
+	_hover: { opacity: 0.8 }
 } as ExtendedLinkProps

@@ -4,6 +4,7 @@ import { SessionProvider } from 'next-auth/react'
 import { swiftbriefTheme } from 'ui/styles/theme'
 import { NextPageWithLayout } from 'types/ui'
 import 'ui/styles/global.scss'
+import { ContactToggle } from 'ui/components'
 
 type AppPropsWithLayout = AppProps & {
 	Component: NextPageWithLayout
@@ -19,6 +20,7 @@ const App = ({
 		<SessionProvider session={session}>
 			<ChakraProvider theme={swiftbriefTheme}>
 				{getLayout(<Component {...pageProps} />)}
+				<ContactToggle />
 			</ChakraProvider>
 		</SessionProvider>
 	)
