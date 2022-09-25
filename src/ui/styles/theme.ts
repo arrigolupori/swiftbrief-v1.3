@@ -20,6 +20,11 @@ const overrides: ThemeOverride = {
 				color: mode('primary.500', 'secondary.500')(props)
 			})
 		},
+		FormLabel: {
+			baseStyle: (props) => ({
+				color: mode('primary.500', 'white')(props)
+			})
+		},
 		Button: {
 			baseStyle: {
 				letterSpacing: '0.025em'
@@ -47,6 +52,9 @@ const overrides: ThemeOverride = {
 					_hover: { bgColor: 'transparent', opacity: '0.7' },
 					_active: { bgColor: 'transparent' },
 					_focus: { borderColor: '' }
+				},
+				outline: {
+					borderWidth: '2px'
 				}
 			}
 		}

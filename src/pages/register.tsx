@@ -24,7 +24,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 	}
 }
 
-const Signin: NextPageWithLayout<Session> = () => {
+const Register: NextPageWithLayout<Session> = () => {
 	return (
 		<Fragment>
 			<Meta {...registerMeta} />
@@ -33,6 +33,6 @@ const Signin: NextPageWithLayout<Session> = () => {
 	)
 }
 
-Signin.getLayout = getCenteredWebsiteLayout
+Register.getLayout = getCenteredWebsiteLayout
 
-export default Signin
+export default Register

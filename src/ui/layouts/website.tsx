@@ -67,6 +67,7 @@ export const getDirectoryWebsiteLayout = (page: ReactElement) => (
 			maxW={{ base: 'xl', md: '6xl' }}
 			mx='auto'
 			my='6em'
+			textAlign='center'
 			px={{ base: '6', md: '8' }}
 		>
 			{page}

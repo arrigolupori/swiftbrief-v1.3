@@ -3,12 +3,12 @@ import {
 	StackProps,
 	forwardRef,
 	FormControl,
-	Input,
 	Text,
 	Button,
 	FormErrorMessage,
 	FormLabel
 } from '@chakra-ui/react'
+import { BaseInput } from 'ui/components/inputs'
 import { useForm } from 'ui/hooks'
 
 export interface MagicLinkFormProps extends StackProps {
@@ -32,7 +32,7 @@ export const MagicLinkForm = forwardRef<MagicLinkFormProps, 'form'>(
 							isDisabled={magicLinkForm.isSubmitting}
 						>
 							<FormLabel htmlFor='magic-link-email'>Email address</FormLabel>
-							<Input
+							<BaseInput
 								id='magic-link-email'
 								type='email'
 								placeholder='you@yourcompany.com'
@@ -45,7 +45,7 @@ export const MagicLinkForm = forwardRef<MagicLinkFormProps, 'form'>(
 							type='submit'
 							isLoading={magicLinkForm.isSubmitting}
 							isDisabled={
-								!magicLinkForm.touched.email || magicLinkForm.errors.email
+								magicLinkForm.touched.email && magicLinkForm.errors.email
 									? true
 									: false
 							}

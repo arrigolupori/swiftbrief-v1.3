@@ -1,1 +1,1 @@
-export * from './TrialCta'
+export * from './SimpleCta'

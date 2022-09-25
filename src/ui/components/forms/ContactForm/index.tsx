@@ -5,10 +5,9 @@ import {
 	FormControl,
 	FormLabel,
 	FormErrorMessage,
-	Button,
-	Input,
-	Textarea
+	Button
 } from '@chakra-ui/react'
+import { BaseInput, BaseArea } from 'ui/components'
 import { useForm } from 'ui/hooks'
 
 export interface ContactFormProps extends StackProps {
@@ -30,7 +29,7 @@ export const ContactForm = forwardRef<ContactFormProps, 'div'>(
 						}
 					>
 						<FormLabel>Email address</FormLabel>
-						<Input
+						<BaseInput
 							id='contact-form-email'
 							type='email'
 							{...contactForm.getFieldProps('email')}
@@ -47,7 +46,7 @@ export const ContactForm = forwardRef<ContactFormProps, 'div'>(
 						}
 					>
 						<FormLabel>What do you need help with?</FormLabel>
-						<Textarea
+						<BaseArea
 							id='contact-form-message'
 							{...contactForm.getFieldProps('message')}
 							placeholder="Hello team, I would need additional information or support on Swiftbrief's functionality..."

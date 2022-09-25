@@ -3,12 +3,12 @@ import {
 	StackProps,
 	forwardRef,
 	FormControl,
-	Input,
 	Text,
 	Button,
 	FormErrorMessage,
 	FormLabel
 } from '@chakra-ui/react'
+import { BaseInput } from 'ui/components/inputs'
 import { useForm } from 'ui/hooks'
 
 export interface CredentialsFormProps extends StackProps {
@@ -31,7 +31,7 @@ export const CredentialsForm = forwardRef<CredentialsFormProps, 'form'>(
 						isDisabled={credentialsForm.isSubmitting}
 					>
 						<FormLabel>Email address</FormLabel>
-						<Input
+						<BaseInput
 							id='credentials-email'
 							type='email'
 							placeholder='you@yourcompany.com'
@@ -50,7 +50,7 @@ export const CredentialsForm = forwardRef<CredentialsFormProps, 'form'>(
 						isDisabled={credentialsForm.isSubmitting}
 					>
 						<FormLabel htmlFor='credentials-password'>Password</FormLabel>
-						<Input
+						<BaseInput
 							id='credentials-password'
 							type='password'
 							placeholder='********'

@@ -74,7 +74,7 @@ export const HamburgerHeader = forwardRef<BoxProps, 'section'>((props, ref) => {
 		<Box as='section' {...props} ref={ref}>
 			<Box as='nav' bg={blueToPitchBlack}>
 				<Container maxW='1200px' py={{ base: '4', lg: '5' }}>
-					<HStack spacing='10' justify='space-between'>
+					<HStack spacing={mobileBreakpoint ? 5 : 10} justify='space-between'>
 						<HStack spacing='5'>
 							<BaseLink href='/'>
 								<FullLogo />

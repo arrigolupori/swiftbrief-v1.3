@@ -37,7 +37,7 @@ export const DirectoryGrid = forwardRef<DirectoryGridProps, 'div'>(
 							<Icon as={feature.icon} boxSize={14} color={blackToBlue} />
 						</Square>
 						<Stack spacing={{ base: '1', md: '2' }}>
-							<Heading fontSize={{ base: 'lg', md: 'xl' }} color={blackToBlue}>
+							<Heading fontSize={{ base: 'lg', md: 'xl' }}>
 								{feature.title}
 							</Heading>
 							<Text>{feature.description}</Text>
@@ -54,7 +54,7 @@ DirectoryGrid.defaultProps = {
 	maxW: '700px',
 	mx: 'auto',
 	columns: { base: 1, lg: 2 },
-	columnGap: 8,
 	rowGap: { base: 10, md: 16 },
+	columnGap: 8,
 	py: '20'
 } as DirectoryGridProps

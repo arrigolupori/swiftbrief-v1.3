@@ -35,10 +35,6 @@ export const MainAppLayout: FC<AppLayoutProps> = (props) => {
 		'primary.10',
 		'primary.400'
 	)
-	const blackToExtraLightBlue = useColorModeValue(
-		'primary.500',
-		'secondary.200'
-	)
 	const [collapsedSidebar, setCollapsedSidebar] = useState(true)
 	useEffect(() => {
 		const cookie = getCookie('collapsed_sidebar')

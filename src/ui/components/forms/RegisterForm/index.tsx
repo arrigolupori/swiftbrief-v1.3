@@ -3,13 +3,13 @@ import {
 	StackProps,
 	forwardRef,
 	FormControl,
-	Input,
 	Text,
 	Button,
 	FormErrorMessage,
 	FormLabel,
 	FormHelperText
 } from '@chakra-ui/react'
+import { BaseInput } from 'ui/components/inputs'
 import { useForm } from 'ui/hooks'
 
 export interface RegisterFormProps extends StackProps {
@@ -32,7 +32,7 @@ export const RegisterForm = forwardRef<RegisterFormProps, 'form'>(
 						isDisabled={registerForm.isSubmitting}
 					>
 						<FormLabel htmlFor='register-form-email'>Email address</FormLabel>
-						<Input
+						<BaseInput
 							id='register-form-email'
 							type='email'
 							placeholder='you@yourcompany.com'
@@ -50,7 +50,7 @@ export const RegisterForm = forwardRef<RegisterFormProps, 'form'>(
 						isDisabled={registerForm.isSubmitting}
 					>
 						<FormLabel htmlFor='register-form-password'>Password</FormLabel>
-						<Input
+						<BaseInput
 							id='register-form-password'
 							type='password'
 							placeholder='********'
@@ -71,7 +71,7 @@ export const RegisterForm = forwardRef<RegisterFormProps, 'form'>(
 						<FormLabel htmlFor='register-form-password-confirmation'>
 							Confirm password
 						</FormLabel>
-						<Input
+						<BaseInput
 							id='register-form-password-confirmation'
 							type='password'
 							placeholder='********'

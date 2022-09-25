@@ -3,9 +3,10 @@ import { Meta, ButtonLink, ContactForm } from 'ui/components'
 import { contactMeta } from 'data/meta'
 import { NextPageWithLayout } from 'types/ui'
 import { getCenteredWebsiteLayout } from 'ui/layouts'
-import { Stack, Heading, Text, Link } from '@chakra-ui/react'
+import { Stack, Heading, Text, Link, useColorModeValue } from '@chakra-ui/react'
 
-const NotFound: NextPageWithLayout = () => {
+const Contact: NextPageWithLayout = () => {
+	const blackToWhite = useColorModeValue('primary.500', 'white')
 	return (
 		<Fragment>
 			<Meta {...contactMeta} />
@@ -20,13 +21,13 @@ const NotFound: NextPageWithLayout = () => {
 				</Text>
 			</Stack>
 			<ContactForm />
-			<ButtonLink variant='link' href='/'>
+			<ButtonLink variant='link' href='/' color={blackToWhite}>
 				← Back to home page
 			</ButtonLink>
 		</Fragment>
 	)
 }
 
-NotFound.getLayout = getCenteredWebsiteLayout
+Contact.getLayout = getCenteredWebsiteLayout
 
-export default NotFound
+export default Contact

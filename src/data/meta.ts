@@ -1,4 +1,5 @@
 import { MetaItem } from 'types/meta'
+import { StrapiFeature } from 'types/strapi'
 
 export const outlineGenMeta: MetaItem = {
 	title: 'The 100% free blog outline generator from Swiftbrief',
@@ -40,9 +41,9 @@ export const resourcesMeta: MetaItem = {
 }
 
 export const pricingMeta: MetaItem = {
-	title: 'Just $19 / mo to generate high-quality briefs | Swiftbrief',
+	title: 'Just $29 / mo to generate high-quality briefs | Swiftbrief',
 	description:
-		'Swiftbrief offers a simple pricing structure. Join our early bird program starting from just $19 / mo and generate high-quality briefs in no time.',
+		'Swiftbrief starts at just $29 / mo. Join 100s of content marketers, generate high-quality briefs in no time, and deliver content ROI.',
 	thumbnailUrl: `${process.env.NEXT_PUBLIC_URL}/img/thumbnails/swiftbrief-pricing.png`,
 	thumbnailAlt: 'swiftbrief pricing'
 }
@@ -104,4 +105,21 @@ export const errorMeta: MetaItem = {
 		'It looks like something went wrong while you were navigating the Swiftbrief website. Please check the error description to learn more or contact support.',
 	thumbnailUrl: `${process.env.NEXT_PUBLIC_URL}/img/thumbnails/swiftbrief-home.png`,
 	thumbnailAlt: 'swiftbrief error page'
+}
+
+export const singleFeatureMeta = (feature: StrapiFeature) => {
+	return {
+		title: feature?.attributes?.title,
+		description: feature?.attributes?.subHeading,
+		thumbnailUrl: `${process.env.NEXT_PUBLIC_URL}/img/thumbnails/swiftbrief-home.png`,
+		thumbnailAlt: 'swiftbrief brief generation for content marketers'
+	}
+}
+
+export const featuresMeta: MetaItem = {
+	title: 'Brief generation, outline builder & more features | Swiftbrief',
+	description:
+		'Check out all features Swiftbrief has to offer: brief generation, outline builder, topic clustering, brand guidelines & more.',
+	thumbnailUrl: `${process.env.NEXT_PUBLIC_URL}/img/thumbnails/swiftbrief-home.png`,
+	thumbnailAlt: 'swiftbrief brief generation for content marketers'
 }
