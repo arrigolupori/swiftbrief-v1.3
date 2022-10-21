@@ -1,1 +1,1 @@
-© 2022 Swiftbrief | All rights reserved
+© 2022 Swiftbrief | All rights reserved (v1.3)

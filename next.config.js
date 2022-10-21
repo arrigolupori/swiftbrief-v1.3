@@ -9,7 +9,10 @@ const withMDX = require('@next/mdx')({
 module.exports = withMDX({
 	pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
 	images: {
-		domains: ['swiftbrief-cms.nyc3.digitaloceanspaces.com']
+		domains: [
+			'swiftbrief-cms.nyc3.digitaloceanspaces.com',
+			'lh3.googleusercontent.com'
+		]
 	},
 	swcMinify: true
 })

@@ -7,6 +7,102 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Test {
-  id String @id @default(uuid())
+enum Role {
+  CS_SUPPORT
+  SUPER_ADMIN
+  ADMIN
+  EDITOR
+  WRITER
+  VIEWER
+}
+
+enum Plan {
+  FREE
+  STARTER
+  PROFESSIONAL
+  BUSINESS
+}
+
+model User {
+  id             String        @id @default(cuid())
+  name           String?
+  email          String?       @unique
+  image          String?
+  emailVerified  DateTime?
+  organizationId String?
+  role           Role          @default(SUPER_ADMIN)
+  sessions       Session[]
+  organization   Organization? @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  Account        Account[]
+}
+
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String? @db.Text
+  access_token       String? @db.Text
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String? @db.Text
+  session_state      String?
+  oauth_token_secret String?
+  oauth_token        String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Organization {
+  id                String    @id @default(cuid())
+  name              String?
+  periodEnd         DateTime?
+  plan              Plan      @default(FREE)
+  briefAllowance    Int       @default(2)
+  monthlyBriefsUsed Int       @default(0)
+  topicAllowance    Int       @default(1)
+  monthlyTopicsUsed Int       @default(0)
+  brandAllowance    Int       @default(1)
+  customerId        String?   @unique
+  users             User[]
+}
+
+model Brand {
+  id String @id @default(cuid())
+}
+
+model Topic {
+  id String @id @default(cuid())
+}
+
+model SubTopic {
+  id String @id @default(cuid())
+}
+
+model Brief {
+  id String @id @default(cuid())
+}
+
+model Link {
+  id String @id @default(cuid())
 }
